@@ -17,6 +17,8 @@ register.registerMetric(requestCounter);
 const PORT = process.env.PORT || 3000;
 
 app.get('/health', (_req, res) => {
+  
+
   res.json({ status: 'ok', uptime: process.uptime() });
 });
 

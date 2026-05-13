@@ -6,16 +6,13 @@
 docker compose up --build -d
 ```
 
-Ovrir http://localhost:3000
+Ovrir http://localhost:8000/health
 
-## Local (sans docker)
+## Atelier 1
+J'ai appris REST API avec ExpressJS et configuré Docker.
 
-```bash
-npm install
-npm start
-```
+## Atelier 2
+J'ai appris à automatiser les actions sur GitHub.
 
-## L'architecture
-
-- **Backend** (`server.js`): Express. Exposes `/api/calculate` (POST), `/api/history` (GET/DELETE), `/health`. Expressions are evaluated with `mathjs.evaluate`
-- **Frontend** (`public/`): plain HTML/CSS/JS. Sends each `=` press to the backend. History is server-side, in memory, capped at 50 entries.
+## Atelier 3
+J'ai appris à créer des métrics avec prometheus et à montrer des métrics avec grafana.

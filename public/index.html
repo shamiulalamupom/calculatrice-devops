@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d0d0c" />
+  <title>Terminal · Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="stage">
+    <header class="masthead">
+      <div class="brand">
+        <span class="brand__mark">▍</span>
+        <span class="brand__name">TERMINAL</span>
+        <span class="brand__dot">·</span>
+        <span class="brand__model">CALCULATRICE</span>
+      </div>
+      <div class="status">
+        <span class="status__led" data-led></span>
+        <span class="status__text" data-status>READY</span>
+      </div>
+    </header>
+
+    <section class="device" aria-label="Calculator">
+      <!-- Display -->
+      <div class="display">
+        <div class="display__scan" aria-hidden="true"></div>
+        <div class="display__glow" aria-hidden="true"></div>
+        <div class="display__inner">
+          <div class="display__expression" data-expression>&nbsp;</div>
+          <div class="display__result" data-result>0</div>
+        </div>
+        <div class="display__meta">
+          <span data-meta-mode>DEG</span>
+          <span data-meta-error class="display__error" hidden>ERR</span>
+        </div>
+      </div>
+
+      <!-- Keypad -->
+      <div class="keypad" role="group" aria-label="Calculator keys">
+        <button class="key key--util" data-action="clear">AC</button>
+        <button class="key key--util" data-action="delete" aria-label="Delete">DEL</button>
+        <button class="key key--util" data-input="(">(</button>
+        <button class="key key--util" data-input=")">)</button>
+
+        <button class="key key--fn" data-input="sqrt(">√</button>
+        <button class="key key--fn" data-input="^">x<sup>y</sup></button>
+        <button class="key key--fn" data-input="%">%</button>
+        <button class="key key--op" data-input="/">÷</button>
+
+        <button class="key" data-input="7">7</button>
+        <button class="key" data-input="8">8</button>
+        <button class="key" data-input="9">9</button>
+        <button class="key key--op" data-input="*">×</button>
+
+        <button class="key" data-input="4">4</button>
+        <button class="key" data-input="5">5</button>
+        <button class="key" data-input="6">6</button>
+        <button class="key key--op" data-input="-">−</button>
+
+        <button class="key" data-input="1">1</button>
+        <button class="key" data-input="2">2</button>
+        <button class="key" data-input="3">3</button>
+        <button class="key key--op" data-input="+">+</button>
+
+        <button class="key key--wide" data-input="0">0</button>
+        <button class="key" data-input=".">.</button>
+        <button class="key key--equals" data-action="equals" aria-label="Equals">=</button>
+      </div>
+    </section>
+
+    <aside class="history" aria-label="History">
+      <div class="history__head">
+        <h2 class="history__title">LOG</h2>
+        <button class="history__clear" data-action="clear-history" type="button">CLEAR</button>
+      </div>
+      <ol class="history__list" data-history>
+        <li class="history__empty">No entries yet.</li>
+      </ol>
+      <p class="history__note">Last 50 entries · cleared on restart.</p>
+    </aside>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>
